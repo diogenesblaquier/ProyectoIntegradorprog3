@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import Card from '../Card/Card'
-import Header from '../Header/Header'
+import Header from '../Navbar/Navbar'
 
 class Api extends Component {
 constructor(){
