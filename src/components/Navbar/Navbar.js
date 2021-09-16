@@ -12,16 +12,8 @@ class Navbar extends Component{
         return(
             <React.Fragment>
                 <header className='encabezado bg-success text-white p-2 '>
-                        <h1>Aplicación de películas</h1>
-                        <section className='opciones'>
-                            <p>Ordenar ASC/ DESC</p>
-                            <i className="fas fa-th"></i>
-                            <i className="fas fa-align-justify"></i>
-                            <form action="">
-                                <input type="text" name="search" id="" placeholder="Search"/>
-                                <button type="submit"><i className="fas fa-search"></i></button>
-                            </form>
-                        </section>
+                        <h1>Musica Online</h1>
+                        
                 </header>
             </React.Fragment>
         )

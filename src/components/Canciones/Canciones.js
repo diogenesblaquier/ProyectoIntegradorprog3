@@ -23,10 +23,47 @@ componentDidMount(){
     })
     .catch(error => console.log(error))
 }
+deleteCard(albumABorrar) {
+    let albumsQueQuedan = this.state.albumes.filter(album => album.id !== albumABorrar);
+    this.setState({
+        albumes: albumsQueQuedan
+    })
+}
 
+addMore(){
+    let limitAnterior = this.state.limit
+    this.setState({
+            limit: limitAnterior + 10,
+        },
+        () => this.traerMas())   
+}
+
+traerMas() {
+    let url = ("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=" + this.state.limit.toString())
+
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            this.setState({
+                albumes: data.data,
+            })
+            console.log(url);
+        })
+        .catch(function (e) {
+            console.log(e);
+        })
+}
     render (){
         return( 
             <React.Fragment>
+                <section className='opciones'>
+                            <i className="fas fa-th"></i>
+                            <i className="fas fa-align-justify"></i>
+                            <form action="">
+                                <input type="text" name="search" id="" placeholder="Search"/>
+                                <button type="submit"><i className="fas fa-search"></i></button>
+                            </form>
+                        </section>
                  <main className="container">
             
             <section className="card-container">
