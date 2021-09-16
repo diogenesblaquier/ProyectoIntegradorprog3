@@ -7,9 +7,9 @@ function Footer(){
         <React.Fragment>
             <footer>
                 <ul className="team bg-success">
-                    <li>Nombre integrante 1</li>
-                    <li>Nombre integrante 2</li>
-                    <li>Nombre integrante 3</li>
+                    <li>Diogenes Blaquier</li>
+                    <li>Felipe de Aramburu</li>
+                    <li>Juan Huidobro</li>
                 </ul>
             </footer>      
         </React.Fragment>
