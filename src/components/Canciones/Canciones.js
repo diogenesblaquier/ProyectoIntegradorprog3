@@ -27,7 +27,17 @@ componentDidMount(){
     render (){
         return( 
             <React.Fragment>
-                
+                 <main className="container">
+            
+            <section className="card-container">
+             {this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} />)}
+
+            </section>
+
+          <div className="button-container">
+             <button className="more" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
+          </div>
+        </main>
             </React.Fragment>
         ) 
     }
