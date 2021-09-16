@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import Card from '../Card/Card'
-import Header from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar';
 
 class Api extends Component {
 constructor(){
@@ -23,5 +23,13 @@ componentDidMount(){
     })
     .catch(error => console.log(error))
 }
+
+    render (){
+        return( 
+            <React.Fragment>
+                
+            </React.Fragment>
+        ) 
+    }
 }
 export default Api
