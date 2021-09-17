@@ -12,7 +12,12 @@ class Navbar extends Component{
         return(
             <React.Fragment>
                 <header className='encabezado bg-success text-white p-2 '>
+                       
+                <img className= "logo-music" src="./img/Logo.jpeg"/>
                         <h1>Musica Online</h1>
+
+
+                        
                         
                 </header>
             </React.Fragment>
