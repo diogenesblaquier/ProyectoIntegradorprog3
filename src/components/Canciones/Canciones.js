@@ -59,7 +59,7 @@ traerMas() {
                 <section className='opciones'>
                             <i className="fas fa-th"></i>
                             <i className="fas fa-align-justify"></i>
-                            <form action="">
+                            <form class="">
                                 <input type="text" name="search" id="" placeholder="Search"/>
                                 <button type="submit"><i className="fas fa-search"></i></button>
                             </form>
