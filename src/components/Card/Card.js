@@ -9,7 +9,19 @@ constructor(props){
         text: 'Ver más',
     }
 }
-
+viewMore(){
+  if(this.state.viewMore){
+      this.setState({
+          viewMore: false,
+          text: 'Ver más'
+      })
+  } else {
+      this.setState({
+          viewMore: true,
+          text: 'Ver menos'
+      })            
+  }
+}
 
 
 render () {
