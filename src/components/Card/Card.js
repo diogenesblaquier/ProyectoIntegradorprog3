@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "./Card.css"
 
 class Card extends Component {
 constructor(props){
@@ -26,6 +27,10 @@ viewMore(){
 
 render () {
     return(
+
+      <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+
+      <div class="uk-card uk-card-hover">
              <article>
                   <section className="navigation">
                     <div>
@@ -52,7 +57,9 @@ render () {
                   </main>
                 </article>
             
-
+                </div>
+                </div>
+      
     )
 }
 
