@@ -32,11 +32,7 @@ render () {
       <div class="uk-card uk-card-hover">
              <article>
                   <section className="navigation">
-                    <div>
-                      <i className="fas fa-chevron-left"></i>
-                      <i className="fas fa-chevron-right"></i>
-                    </div>
-                    <i className="far fa-window-close" id="borrar" onClick={() => this.props.remove(this.props.dataAlbum.id)} ></i>
+                    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" onClick={() => this.props.remove(this.props.dataAlbum.id)}>ELIMINAR</button>
                   </section>
                   <main>
                     <div className="image-container">
@@ -44,15 +40,29 @@ render () {
                     </div>
                       <h3>{this.props.dataAlbum.title}</h3>
                       <p className="description">{this.props.dataAlbum.record_type.toUpperCase()}</p>
-                      <section className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>
-                        <p>Artist:</p>
-                        <div className="artist-data">
+              
+     <article class="uk-comment">
+    <header class="uk-comment-header">
+        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                      
+        <section className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>            
+          <div class="uk-width-auto">
                           <img className="artist-img" src={this.props.dataAlbum.artist.picture_small} alt="" />
-                          <p>{this.props.dataAlbum.artist.name}</p>
-                        </div>
-                      <p>Explicit content: {this.props.dataAlbum.explicit_lyrics ? 'Yes' : 'No'}</p>
+          </div>
+          <div class="uk-width-expand">
+                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">{this.props.dataAlbum.artist.name}</a></h4>
+                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                    <li><a href="#">Explicit content</a></li>
+                    <li><a href="#"> {this.props.dataAlbum.explicit_lyrics ? 'Yes' : 'No'}</a></li>
+                </ul>
+          </div> 
                       </section>
+           </div>
+           </header>
+           </article>
+                      <button class="uk-button uk-button-secondary uk-width-1-1">
                       <p className='view-more' onClick={()=>this.viewMore()}>{this.state.text}</p>
+                      </button>
                   </main>
                 </article>
                 </div>

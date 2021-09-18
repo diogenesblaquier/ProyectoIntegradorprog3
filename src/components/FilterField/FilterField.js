@@ -20,10 +20,15 @@ class FilterField extends Component{
     render(){
         return(
             <React.Fragment>
+
+<ul class="uk-subnav uk-subnav-divider" uk-margin>
+    <li class="uk-active"><a href="#"> v / > </a></li>
+    <li><a href="#">ASC / DEC</a></li>
                 <form onSubmit = {(e) => this.evitarEnviar(e) }>
-                    <label for='nombre'>Albumes a filtrar..:</label>
+                    <label for='nombre'></label>
                     <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
                 </form>
+</ul>
             </React.Fragment>
         )
     }
