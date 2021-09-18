@@ -1,7 +1,4 @@
-.team{
-    display: flex;
-    color: white;
-    height: 300px;
-    justify-content: space-around;
-    align-items: center;
+.footer{
+    background-color:#c0c0c0;
+    padding: 3%;
 }

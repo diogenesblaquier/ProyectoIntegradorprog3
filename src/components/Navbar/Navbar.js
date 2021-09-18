@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../Card/Card.css';
+import '../Uikit/Uikit.css';
 
 class Navbar extends Component{
     constructor(){
@@ -16,7 +16,7 @@ class Navbar extends Component{
 <nav class="uk-navbar uk-navbar-container uk-margin">
     <div class="uk-navbar-left">
         <a class="uk-navbar-toggle" href="#">
-        <span class="uk-margin-small-right" uk-icon="check"></span>
+        <a href="" class="uk-icon-button" uk-icon="youtube"></a>
         <span class="uk-margin-small-left">Musica Online</span>
         </a>
     </div>

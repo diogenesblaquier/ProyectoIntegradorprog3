@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import "./Card.css"
+import "../Uikit/Uikit.css"
 
 class Card extends Component {
 constructor(props){
@@ -27,9 +28,7 @@ viewMore(){
 
 render () {
     return(
-
-      <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-
+    <div class="Card-Container">
       <div class="uk-card uk-card-hover">
              <article>
                   <section className="navigation">
@@ -56,10 +55,8 @@ render () {
                       <p className='view-more' onClick={()=>this.viewMore()}>{this.state.text}</p>
                   </main>
                 </article>
-            
                 </div>
                 </div>
-      
     )
 }
 

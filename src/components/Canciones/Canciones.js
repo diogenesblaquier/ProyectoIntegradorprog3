@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import Card from '../Card/Card'
 import Navbar from '../Navbar/Navbar';
 import FilterField from "../FilterField/FilterField";
+import "../Uikit/Uikit.css"
 
 class Api extends Component {
 constructor(){
@@ -91,7 +92,7 @@ traerMas() {
             </section>
 
           <div className="button-container">
-             <button className="more" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
+             <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
           </div>
         </main>
             </React.Fragment>
