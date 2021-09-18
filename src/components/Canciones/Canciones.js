@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Card from '../Card/Card'
 import Navbar from '../Navbar/Navbar';
+import FilterField from "../FilterField/FilterField";
 
 class Api extends Component {
 constructor(){
@@ -8,17 +9,21 @@ constructor(){
     this.state = {
         albumes:[],
         limit: 10,
+        albumesEncontrados: [],
+        filtrarPor:"",
     }
 }
+
 componentDidMount(){
     let url = ("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=" + this.state.limit.toString())
 
     fetch (url)
     .then(response => response.json())
     .then((data) => {
-        console.log(data);
+        console.log(data.data);
         this.setState({
             albumes: data.data,
+            albumesEncontrados: data.data,
         })
     })
     .catch(error => console.log(error))
@@ -30,6 +35,16 @@ deleteCard(albumABorrar) {
     })
 }
 
+filtrarAlbum (albumAFiltrar){
+    let albumesFiltrados = this.state.albumesEncontrados.filter(album =>{
+        return album.title.toLowerCase().includes(albumAFiltrar.toLowerCase()) 
+    } )
+    this.setState({
+        album: albumesFiltrados
+    })
+}
+
+
 addMore(){
     let limitAnterior = this.state.limit
     this.setState({
@@ -37,6 +52,13 @@ addMore(){
         },
         () => this.traerMas())   
 }
+
+
+    
+    
+
+
+
 
 traerMas() {
     let url = ("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=" + this.state.limit.toString())
@@ -53,19 +75,16 @@ traerMas() {
             console.log(e);
         })
 }
+
     render (){
         return( 
             <React.Fragment>
-                <section className='opciones'>
-                            <i className="fas fa-th"></i>
-                            <i className="fas fa-align-justify"></i>
-                            <form class="">
-                                <input type="text" name="search" id="" placeholder="Search"/>
-                                <button type="submit"><i className="fas fa-search"></i></button>
-                            </form>
-                        </section>
-                 <main className="container">
-            
+                
+                        
+              <main className="container">
+                 <div>
+                     <FilterField  filtrarAlbum = { (texto) => this.filtrarAlbum(texto) } />
+                </div> 
             <section className="card-container">
              {this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} />)}
 
