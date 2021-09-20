@@ -23,7 +23,7 @@ class FilterField extends Component{
 
 <ul className="uk-subnav uk-subnav-divider" uk-margin>
     <li className="uk-active"><a href="#"> v /  </a></li>
-    <li><a href="#">ASC / DEC</a></li>
+    <li><a href="#">ASC / DEC</a>  </li>
                 <form onSubmit = {(e) => this.evitarEnviar(e) }>
                     <label for='nombre'></label>
                     <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />

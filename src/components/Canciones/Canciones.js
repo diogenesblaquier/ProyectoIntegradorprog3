@@ -41,7 +41,7 @@ filtrarAlbum (albumAFiltrar){
         return album.title.toLowerCase().includes(albumAFiltrar.toLowerCase()) 
     } )
     this.setState({
-        album: albumesFiltrados
+        albumes: albumesFiltrados
     })
 }
 
@@ -53,18 +53,9 @@ addMore(){
         },
         () => this.traerMas())   
 }
-
-
-    
-    
-
-
-
-
-traerMas() {
-    let url = ("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=" + this.state.limit.toString())
-
-    fetch(url)
+        traerMas() {
+     let url = ("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=" + this.state.limit.toString())
+        fetch(url)
         .then((response) => response.json())
         .then((data) => {
             this.setState({
@@ -76,21 +67,17 @@ traerMas() {
             console.log(e);
         })
 }
-
-    render (){
-        return( 
-            <React.Fragment>
-                
-                        
+        render (){
+         return( 
+            <React.Fragment>    
               <main className="container">
                  <div>
                      <FilterField  filtrarAlbum = { (texto) => this.filtrarAlbum(texto) } />
                 </div> 
-            <section className="card-container">
+            <section className="uk-flex uk-flex-wrap uk-flex-wrap-around">
              {this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} />)}
 
             </section>
-
           <div className="button-container">
              <button className="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
           </div>
