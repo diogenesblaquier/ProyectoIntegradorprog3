@@ -22,7 +22,7 @@ class FilterField extends Component{
             <React.Fragment>
 
 <ul className="uk-subnav uk-subnav-divider" uk-margin>
-    <li className="uk-active"><a href="#"> v /  </a></li>
+    <li className="uk-active"><a href="#">   </a></li>
     <li><a href="#">ASC / DEC</a>  </li>
                 <form onSubmit = {(e) => this.evitarEnviar(e) }>
                     <label for='nombre'></label>
