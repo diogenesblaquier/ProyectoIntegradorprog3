@@ -26,7 +26,7 @@ class FilterField extends Component{
     <li><a href="#">ASC / DEC</a>  </li>
                 <form onSubmit = {(e) => this.evitarEnviar(e) }>
                     <label for='nombre'></label>
-                    <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
+                    <input  type='text' name='nombre' placeholder='Buscar..'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
                 </form>
 </ul>
             </React.Fragment>
