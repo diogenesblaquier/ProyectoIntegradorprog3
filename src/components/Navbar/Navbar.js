@@ -13,11 +13,11 @@ class Navbar extends Component{
             <React.Fragment>
 
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-<nav class="uk-navbar uk-navbar-container uk-margin">
-    <div class="uk-navbar-left">
+<nav className="uk-navbar uk-navbar-container uk-margin">
+    <div className="uk-navbar-left">
         <a class="uk-navbar-toggle" href="#">
-        <a href="" class="uk-icon-button" uk-icon="youtube"></a>
-        <span class="uk-margin-small-left">Musica Online</span>
+        <a href="" className="uk-icon-button" uk-icon="youtube"></a>
+        <span className="uk-margin-small-left">Musica Online</span>
         </a>
     </div>
 </nav>

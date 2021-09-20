@@ -92,7 +92,7 @@ traerMas() {
             </section>
 
           <div className="button-container">
-             <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
+             <button className="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
           </div>
         </main>
             </React.Fragment>
