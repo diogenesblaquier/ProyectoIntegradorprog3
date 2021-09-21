@@ -51,6 +51,7 @@ render () {
                  <ul className="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li><a href="#">Explicit content</a></li>
                     <li><a href="#"> {this.props.dataAlbum.explicit_lyrics ? 'Yes' : 'No'}</a></li>
+                    <p>Hit on radio? {this.props.dataAlbum.artist.radio ? 'Yes' : 'No'}</p>
                 </ul>
           </div> 
         </section>
