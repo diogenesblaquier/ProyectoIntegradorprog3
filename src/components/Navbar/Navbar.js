@@ -5,13 +5,11 @@ class Navbar extends Component{
     constructor(){
         super();
         this.state ={
-
         }
     }
     render(){
         return(
             <React.Fragment>
-
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
 <nav className="uk-navbar uk-navbar-container uk-margin">
     <div className="uk-navbar-left">

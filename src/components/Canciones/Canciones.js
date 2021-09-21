@@ -36,7 +36,6 @@ deleteCard(albumABorrar) {
         albumes: albumsQueQuedan
     })
 }
-
 filtrarAlbum (albumAFiltrar){
     let albumesFiltrados = this.state.albumesEncontrados.filter(album =>{
         return album.title.toLowerCase().includes(albumAFiltrar.toLowerCase()) 
@@ -77,7 +76,7 @@ addMore(){
                 {
                     this.state.cargando === false ?
                     <img src="https://media.tenor.com/images/7500668d515374c0dd15a7ed1e8bdbd8/tenor.gif" alt="loading"/>  :
-                    this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} row={ this.state.row} />)
+                    this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)}/>)
                 }    
                 </section>
             <div className="button-container">
