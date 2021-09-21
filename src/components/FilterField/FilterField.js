@@ -20,18 +20,16 @@ class FilterField extends Component{
     render(){
         return(
             <React.Fragment>
-
-<ul className="uk-subnav uk-subnav-divider" uk-margin>
-    <li className="uk-active"><a href="#">   </a></li>
-    <li><a href="#">ASC / DEC</a>  </li>
-                <form onSubmit = {(e) => this.evitarEnviar(e) }>
-                    <label for='nombre'></label>
-                    <input  type='text' name='nombre' placeholder='Buscar..'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
-                </form>
-</ul>
+                <ul className="uk-subnav uk-subnav-divider" uk-margin>
+                    <li className="uk-active"><a href="#">   </a></li>
+                    <li><a href="#">ASC / DEC</a>  </li>
+                                <form onSubmit = {(e) => this.evitarEnviar(e) }>
+                                    <label for='nombre'></label>
+                                    <input  type='text' name='nombre' placeholder='Buscar..'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
+                                </form>
+                </ul>
             </React.Fragment>
         )
     }
-
 }
 export default FilterField;

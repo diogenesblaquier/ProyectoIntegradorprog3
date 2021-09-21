@@ -14,7 +14,6 @@ constructor(){
         filtrarPor:"",
     }
 }
-
 componentDidMount(){
     let url = ("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=" + this.state.limit.toString())
 
@@ -44,8 +43,6 @@ filtrarAlbum (albumAFiltrar){
         albumes: albumesFiltrados
     })
 }
-
-
 addMore(){
     let limitAnterior = this.state.limit
     this.setState({
@@ -76,12 +73,11 @@ addMore(){
                 </div> 
             <section className="uk-flex uk-flex-wrap uk-flex-wrap-around">
              {this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} />)}
-
             </section>
-          <div className="button-container">
+            <div className="button-container">
              <button className="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
-          </div>
-        </main>
+            </div>
+            </main>
             </React.Fragment>
         ) 
     }

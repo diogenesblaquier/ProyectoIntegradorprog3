@@ -24,8 +24,6 @@ viewMore(){
       })            
   }
 }
-
-
 render () {
     return(
     <div class="Card-Container">
@@ -40,9 +38,8 @@ render () {
                     </div>
                       <h3>{this.props.dataAlbum.title}</h3>
                       <p className="description">{this.props.dataAlbum.record_type.toUpperCase()}</p>
-              
      <article className="uk-comment">
-    <header className="uk-comment-header">
+     <header className="uk-comment-header">
         <div class="uk-grid-medium uk-flex-middle" uk-grid>
                       
         <section className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>            
@@ -56,10 +53,10 @@ render () {
                     <li><a href="#"> {this.props.dataAlbum.explicit_lyrics ? 'Yes' : 'No'}</a></li>
                 </ul>
           </div> 
-                      </section>
-           </div>
-           </header>
-           </article>
+        </section>
+        </div>
+      </header>
+     </article>
                       <button className="uk-button uk-button-secondary uk-width-1-1">
                       <p className='view-more' onClick={()=>this.viewMore()}>{this.state.text}</p>
                       </button>
@@ -69,8 +66,5 @@ render () {
                 </div>
     )
 }
-
-
 }
-
 export default Card

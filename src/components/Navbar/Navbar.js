@@ -25,6 +25,5 @@ class Navbar extends Component{
             </React.Fragment>
         )
     }
-
 }
 export default Navbar;
