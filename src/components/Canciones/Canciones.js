@@ -12,6 +12,7 @@ constructor(){
         limit: 10,
         albumesEncontrados: [],
         filtrarPor:"",
+        cargando:false,
     }
 }
 componentDidMount(){
@@ -24,6 +25,7 @@ componentDidMount(){
         this.setState({
             albumes: data.data,
             albumesEncontrados: data.data,
+            cargando: true,
         })
     })
     .catch(error => console.log(error))
@@ -71,9 +73,13 @@ addMore(){
                  <div>
                      <FilterField  filtrarAlbum = { (texto) => this.filtrarAlbum(texto) } />
                 </div> 
-            <section className="uk-flex uk-flex-wrap uk-flex-wrap-around">
-             {this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} />)}
-            </section>
+                <section  className="card-container">
+                {
+                    this.state.cargando === false ?
+                    <img src="https://media.tenor.com/images/7500668d515374c0dd15a7ed1e8bdbd8/tenor.gif" alt="loading"/>  :
+                    this.state.albumes.map((album, idx) => <Card key={album.title + idx} dataAlbum={album} remove={(albumABorrar) => this.deleteCard(albumABorrar)} row={ this.state.row} />)
+                }    
+                </section>
             <div className="button-container">
              <button className="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" onClick={() => this.addMore()} >Cargar más tarjetas</button>
             </div>
